@@ -1,0 +1,85 @@
+-----------------------Multiple Linear Regression Results-----------------------
+Call:
+lm(formula = mpg ~ vehicle.length + vehicle.weight + spoiler.angle + ground.clearance + AWD,data=mpg_data)
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
+vehicle.length    6.267e+00  6.553e-01   9.563 2.60e-12 ***
+vehicle.weight    1.245e-03  6.890e-04   1.807   0.0776 .  
+spoiler.angle     6.877e-02  6.653e-02   1.034   0.3069    
+ground.clearance  3.546e+00  5.412e-01   6.551 5.21e-08 ***
+AWD              -3.411e+00  2.535e+00  -1.346   0.1852    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.774 on 44 degrees of freedom
+Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
+F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+
+
+According to our results, vehicle length and ground clearance provided a non-random amount of variance to the mpg values in the dataset.
+This means that these variables have a significant impact on mpg values.
+
+As for our slope, we can say that the slope of our linear model will not be zero. 
+This is because there are significant linear relationships between some of the independent variables, vehicle length and ground clearance, and the dependent variable of mpg values.
+
+Though there are significant independent variables, this linear model does not predict mpg of MechaCar prototypes effectively.
+Since the intercept was also statistically significant, there are other variables and factors that contribute to the mpg values that are not in our current model.
+Those will need to be researched in order for the model to be effective.
+
+-----------------------Suspension Coil Summary-----------------------
+PSI
+Mean: 1499
+Median: 1500
+Variance: 62.29
+Standard Dev.: 7.89
+
+The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per inch.
+As we can see from the data summary table above, our PSI variance is 62, which is well below the specifications. Hence, the current manufacturing data meets the current design specifications.
+
+-----------------------Suspension Coil t-Test-----------------------
+Using the same suspension coil data and the MechaCarChallenge.RScript file,
+determine if the suspension coil’s pound-per-inch results are statistically different from the mean population results of 1,500 pounds per inch.
+Hint: Refer to the t-test section of this module to determine which statistical test to use.
+
+	One Sample t-test
+
+data:  log10(suspension_data$PSI)
+t = -7972765, df = 149, p-value < 2.2e-16
+alternative hypothesis: true mean is not equal to 1499
+95 percent confidence interval:
+ 3.175361 3.176103
+sample estimates:
+mean of x 
+ 3.175732 
+
+From the data above, our p-value is close to zero. From that, we can say that there is a statistical difference between the observed sample mean and the population mean.
+
+--------Statistical Study----------
+For my statistical study, I want to figure out how the MechaCar can outperform all other competition. 
+In times today, millennials want cars with style that are somewhat affordable. However, not all cars that fit that criteria are as reliable.
+Some of factors of the MechaCar that could be of interest to consumers are its cost, fuel efficiency, style, transmission, and its CO2 emissions.
+
+The question I'd want to answer is, does the car's CO2 emissions affect consumer behavior when buying cars?
+Knowing we live in a world where hybrid, electric, and hydrogen powered cars live, this would be a good factor to consider.
+With that, I've constructed my null and alternative hypotheses below:
+- Ho : There is no relationship between consumer behavior when purchasing cars and the car's CO2 emissions.
+- Ha : There is a relationship between consumer behavior when purchasing cars and the car's CO2 emissions.
+
+Since we know that there are many different ways cars are powered, this means that there are many independent variables.
+A multiple linear regression model would be the best statistical model to use. With this model, we will be able to tell if the independent variables are statistically significant to the dependent variable.
+
+To start this statistical study, we would need to gather some data.
+To start, we need to know how many types of fuel emissions are out there, here are a few I can name:
+- Electric
+- Gasoline
+- Hybrid (Electric and Gas)
+- Hydrogen
+
+Getting a decent enough sample size for each type of car would also be helpful.
+We'd also want to know the carbon footprint calcluation of each car to gather an estimate of the CO2 emissions of the car.
+Before we can compute for that, however, we'd need to know the average distance traveled of each X fueled car and how many liters per kilometer.
+
+From this statistical study, we can somehow help determine how the MechaCar can be on top of its competition. However, there are a lot of other factors that can affect consumer behavior.
+It may also be a good idea to do a statistical study on each factor of consumer behavior towards buying cars to get the ultimate hypothesis on what consumers would want the most.
